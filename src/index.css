@@ -30,3 +30,7 @@ table {
   margin: 0 auto;
   padding: 15px;
 }
+
+.active {
+  color: red;
+}

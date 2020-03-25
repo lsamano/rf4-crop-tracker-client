@@ -10,7 +10,10 @@ function App() {
     .then(res => res.json())
     .then(seasons => setSeasons(seasons))
   }, [])
-  const allSeasons = seasons.map(season => <Season key={season.id} { ...season } />)
+  
+  const allSeasons = seasons.map(season => {
+    return <Season key={season.id} { ...season } />
+  })
 
   return (
     <div className="seasons">
