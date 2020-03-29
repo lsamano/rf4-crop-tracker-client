@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import CropRow from './CropRow';
 
-const Season = ({ name, liked_crops }) => {
+const Season = ({ name, liked_crops, liked_flowers }) => {
   const [ sortBy, setSortBy ] = useState("")
 
   const handleClick = event => {
@@ -48,7 +48,6 @@ const Season = ({ name, liked_crops }) => {
           {header}
         </th> )
     })
-
   }
 
   return (
@@ -69,7 +68,8 @@ const Season = ({ name, liked_crops }) => {
 
 Season.propTypes = {
   name: PropTypes.string,
-  liked_crops: PropTypes.array
+  liked_crops: PropTypes.array,
+  liked_flowers: PropTypes.array
 };
 
 export default Season;
