@@ -30,6 +30,12 @@ const Season = ({ name, liked_crops, liked_flowers }) => {
     })
   }
 
+  const formatGoodFlowers = () => {
+    return liked_flowers.map(crop => {
+      return <CropRow key={crop.id} {...crop} />
+    })
+  }
+
   const activeCheck = category => {
     if (sortBy === category) {
       return "active"
@@ -61,6 +67,15 @@ const Season = ({ name, liked_crops, liked_flowers }) => {
         </tr>
       </thead>
       <tbody>{formatGoodCrops()}</tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          { makeHeaderRows() }
+          {/*<th>Level</th>*/}
+        </tr>
+      </thead>
+      <tbody>{formatGoodFlowers()}</tbody>
     </table>
   </div>
   );
