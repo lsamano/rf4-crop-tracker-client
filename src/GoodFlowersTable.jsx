@@ -39,7 +39,7 @@ const GoodFlowersTable = ({ goodFlowers }) => {
     if (sortBy === "Name") {
       sortedFlowers = sortedFlowers.sort((a, b) => a.name.localeCompare(b.name))
     } else if (sortBy === "Growth Time") {
-      sortedFlowers = sortedFlowers.sort(((a, b) => a.grow_time - b.grow_time))
+      sortedFlowers = sortedFlowers.sort(((a, b) => b.grow_time - a.grow_time))
     } else if (sortBy === "Harvest Amount") {
       sortedFlowers = sortedFlowers.sort(((a, b) => a.harvest_amount - b.harvest_amount))
     } else if (sortBy === "Regrows?") {
