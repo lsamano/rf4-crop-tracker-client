@@ -24,9 +24,10 @@ const GoodCropsTable = ({ goodCrops }) => {
 
   const makeHeaderRows = () => {
     const headers = ["Name", "Growth Time", "Harvest Amount", "Regrows?"]
-    return headers.map(header => {
+    return headers.map((header, index) => {
       return (
         <th
+          key={index} 
           onClick={handleClick}
           className={activeCheck(header)}>
           {header}

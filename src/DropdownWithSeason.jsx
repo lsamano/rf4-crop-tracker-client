@@ -5,7 +5,7 @@ const DropdownWithSeason = ({ seasons }) => {
     const [ seasonIndex, setSeasonIndex ] = useState(0)
 
   const formOptions = seasons.map(
-    season => <option value={season.id - 1}>{season.name}</option>
+    season => <option value={season.id - 1} key={season.id}>{season.name}</option>
   )
   const handleChange = event => {
     setSeasonIndex(event.target.value)
@@ -23,7 +23,7 @@ const DropdownWithSeason = ({ seasons }) => {
   return (
     <div>
       <form>
-        <label for="seasons">Choose a season:</label>
+        <label htmlFor="seasons">Choose a season:</label>
         <select name="seasons" id="seasons" onChange={handleChange}>
           { formOptions }
         </select>
