@@ -4,9 +4,9 @@ import GoodCropsTable from './GoodCropsTable';
 import GoodFlowersTable from './GoodFlowersTable';
 
 const Season = ({ name, liked_crops, liked_flowers }) => {
+  // <h2>{name.toUpperCase()}</h2>
   return (
     <>
-      <h2>{name.toUpperCase()}</h2>
       <div className="seasons">
         <GoodCropsTable goodCrops={liked_crops} />
         <GoodFlowersTable goodFlowers={liked_flowers} />

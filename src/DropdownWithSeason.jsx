@@ -28,7 +28,7 @@ const DropdownWithSeason = ({ seasons }) => {
           { formOptions }
         </select>
       </form>
-
+      <h2>{seasons[seasonIndex] && seasons[seasonIndex].name.toUpperCase()}</h2>
       { chosenSeason() }
     </div>
   );

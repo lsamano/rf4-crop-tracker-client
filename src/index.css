@@ -22,7 +22,7 @@ th {
 .seasons {
   text-align: center;
   /* align-content: center; */
-  /* justify-content: center; */
+  justify-content: center;
   width: 100%;
   display: flex;
   padding: 10px;
