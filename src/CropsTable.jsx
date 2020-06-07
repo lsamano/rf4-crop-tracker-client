@@ -23,7 +23,7 @@ const CropsTable = ({ crops, regrow }) => {
   }
 
   const makeHeaderRows = () => {
-    const headers = ["Name", "Growth Time", "Harvest Amount"]
+    const headers = ["Name", "Grow Time", "Harvest Amount"]
     if (regrow) {
       headers.push("Regrows?")
     }
@@ -42,12 +42,9 @@ const CropsTable = ({ crops, regrow }) => {
     let sortedCrops = [...crops]
     if (sortBy === "Name") {
       sortedCrops = sortedCrops.sort((a, b) => a.name.localeCompare(b.name))
-    } else if (sortBy === "Growth Time") {
-      sortedCrops = sortedCrops.sort(((a, b) => b.grow_time - a.grow_time))
-    } else if (sortBy === "Harvest Amount") {
-      sortedCrops = sortedCrops.sort(((a, b) => a.harvest_amount - b.harvest_amount))
-    } else if (sortBy === "Regrows?") {
-      sortedCrops = sortedCrops.sort(((a, b) => b.regrows - a.regrows))
+    } else if (sortBy) {
+      const sortKey = sortBy.toLowerCase().replace(/\s/g, "_");
+      sortedCrops = sortedCrops.sort(((a, b) => b[sortKey] - a[sortKey]))
     }
     return sortedCrops.map(crop => {
       return <CropRow key={crop.id} includeRegrow={regrow} {...crop} />
