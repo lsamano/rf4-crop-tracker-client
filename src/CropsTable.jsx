@@ -35,7 +35,7 @@ const CropsTable = ({ crops }) => {
     })
   }
 
-  const formatGoodCrops = () => {
+  const formatCrops = () => {
     let sortedCrops = [...crops]
     if (sortBy === "Name") {
       sortedCrops = sortedCrops.sort((a, b) => a.name.localeCompare(b.name))
@@ -59,7 +59,7 @@ const CropsTable = ({ crops }) => {
           {/*<th>Level</th>*/}
         </tr>
       </thead>
-      <tbody>{ formatGoodCrops() }</tbody>
+      <tbody>{ formatCrops() }</tbody>
     </table>
   )
 }
