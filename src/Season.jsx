@@ -8,9 +8,9 @@ const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
   return (
     <>
       <div className="seasons">
-        <CropsTable crops={liked_crops} />
-        <FlowersTable flowers={liked_flowers} />
-        <CropsTable crops={neutral_crops} />
+        <CropsTable crops={liked_crops} regrow={true} />
+        <CropsTable crops={liked_flowers} regrow={false} />
+        <CropsTable crops={neutral_crops} regrow={true}/>
       </div>
     </>
   );
