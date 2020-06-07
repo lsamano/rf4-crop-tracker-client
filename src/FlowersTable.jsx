@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FlowerRow from './FlowerRow';
 // import PropTypes from 'prop-types'
 
-const GoodFlowersTable = ({ goodFlowers }) => {
+const FlowersTable = ({ flowers }) => {
   const [ sortBy, setSortBy ] = useState("")
 
   const handleClick = event => {
@@ -35,8 +35,8 @@ const GoodFlowersTable = ({ goodFlowers }) => {
     })
   }
 
-  const formatGoodFlowers = () => {
-    let sortedFlowers = [...goodFlowers]
+  const formatFlowers = () => {
+    let sortedFlowers = [...flowers]
     if (sortBy === "Name") {
       sortedFlowers = sortedFlowers.sort((a, b) => a.name.localeCompare(b.name))
     } else if (sortBy === "Growth Time") {
@@ -59,9 +59,9 @@ const GoodFlowersTable = ({ goodFlowers }) => {
           {/*<th>Level</th>*/}
         </tr>
       </thead>
-      <tbody>{ formatGoodFlowers() }</tbody>
+      <tbody>{ formatFlowers() }</tbody>
     </table>
   )
 }
 
-export default GoodFlowersTable
+export default FlowersTable

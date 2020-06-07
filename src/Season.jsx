@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CropsTable from './CropsTable';
-import GoodFlowersTable from './GoodFlowersTable';
+import FlowersTable from './FlowersTable';
 
 const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
   // <h2>{name.toUpperCase()}</h2>
@@ -9,7 +9,7 @@ const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
     <>
       <div className="seasons">
         <CropsTable crops={liked_crops} />
-        <GoodFlowersTable goodFlowers={liked_flowers} />
+        <FlowersTable flowers={liked_flowers} />
         <CropsTable crops={neutral_crops} />
       </div>
     </>
