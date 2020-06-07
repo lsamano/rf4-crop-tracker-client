@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CropRow from './CropRow';
 // import PropTypes from 'prop-types'
 
-const GoodCropsTable = ({ goodCrops }) => {
+const CropsTable = ({ crops }) => {
   const [ sortBy, setSortBy ] = useState("")
 
   const handleClick = event => {
@@ -27,7 +27,7 @@ const GoodCropsTable = ({ goodCrops }) => {
     return headers.map((header, index) => {
       return (
         <th
-          key={index} 
+          key={index}
           onClick={handleClick}
           className={activeCheck(header)}>
           {header}
@@ -36,7 +36,7 @@ const GoodCropsTable = ({ goodCrops }) => {
   }
 
   const formatGoodCrops = () => {
-    let sortedCrops = [...goodCrops]
+    let sortedCrops = [...crops]
     if (sortBy === "Name") {
       sortedCrops = sortedCrops.sort((a, b) => a.name.localeCompare(b.name))
     } else if (sortBy === "Growth Time") {
@@ -64,4 +64,4 @@ const GoodCropsTable = ({ goodCrops }) => {
   )
 }
 
-export default GoodCropsTable
+export default CropsTable

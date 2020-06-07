@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GoodCropsTable from './GoodCropsTable';
+import CropsTable from './CropsTable';
 import GoodFlowersTable from './GoodFlowersTable';
 
 const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
@@ -8,9 +8,9 @@ const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
   return (
     <>
       <div className="seasons">
-        <GoodCropsTable goodCrops={liked_crops} />
+        <CropsTable crops={liked_crops} />
         <GoodFlowersTable goodFlowers={liked_flowers} />
-        <GoodCropsTable goodCrops={neutral_crops} />
+        <CropsTable crops={neutral_crops} />
       </div>
     </>
   );
