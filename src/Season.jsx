@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CropsTable from './CropsTable';
-import FlowersTable from './FlowersTable';
 
 const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
   // <h2>{name.toUpperCase()}</h2>
