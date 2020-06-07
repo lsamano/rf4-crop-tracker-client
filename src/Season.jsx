@@ -8,8 +8,8 @@ const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
     <>
       <div className="seasons">
         <CropsTable crops={liked_crops} regrow={true} />
-        <CropsTable crops={liked_flowers} regrow={false} />
-        <CropsTable crops={neutral_crops} regrow={true}/>
+        {liked_flowers.length > 0 && <CropsTable crops={liked_flowers} regrow={false} />}
+        {neutral_crops.length > 0 && <CropsTable crops={neutral_crops} regrow={true}/>}
       </div>
     </>
   );
