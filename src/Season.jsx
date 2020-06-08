@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import CropsTable from './CropsTable';
 
 const Season = ({ name, liked_crops, liked_flowers, neutral_crops }) => {
-  // <h2>{name.toUpperCase()}</h2>
   return (
-    <>
       <div className="seasons">
-        <CropsTable crops={liked_crops} regrow={true} />
-        {liked_flowers.length > 0 && <CropsTable crops={liked_flowers} regrow={false} />}
-        {neutral_crops.length > 0 && <CropsTable crops={neutral_crops} regrow={true}/>}
+        <CropsTable crops={liked_crops} regrow={true} title={"Crops"} />
+        {liked_flowers.length > 0
+          && <CropsTable crops={liked_flowers} regrow={false} title={"Flowers"} />}
+        {neutral_crops.length > 0
+          && <CropsTable crops={neutral_crops} regrow={true} title={"Neutrals"} />}
       </div>
-    </>
   );
 }
 

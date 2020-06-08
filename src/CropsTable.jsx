@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import CropRow from './CropRow';
 // import PropTypes from 'prop-types'
 
-const CropsTable = ({ crops, regrow }) => {
+const CropsTable = ({ crops, regrow, title }) => {
   const [ sortBy, setSortBy ] = useState("")
 
   const handleClick = event => {
@@ -25,7 +25,7 @@ const CropsTable = ({ crops, regrow }) => {
   const makeHeaderRows = () => {
     const headers = ["Name", "Grow Time", "Harvest Amount"]
     if (regrow) {
-      headers.push("Regrows?")
+      headers.push("Regrows")
     }
     return headers.map((header, index) => {
       return (
@@ -39,7 +39,7 @@ const CropsTable = ({ crops, regrow }) => {
   }
 
   const formatCrops = () => {
-    let sortedCrops = [...crops]
+    let sortedCrops = [ ...crops ]
     if (sortBy === "Name") {
       sortedCrops = sortedCrops.sort((a, b) => a.name.localeCompare(b.name))
     } else if (sortBy) {
@@ -52,6 +52,8 @@ const CropsTable = ({ crops, regrow }) => {
   }
 
   return (
+    <div>
+    <h4>{ title }</h4>
     <table>
       <thead>
         <tr>
@@ -61,6 +63,7 @@ const CropsTable = ({ crops, regrow }) => {
       </thead>
       <tbody>{ formatCrops() }</tbody>
     </table>
+  </div>
   )
 }
 
