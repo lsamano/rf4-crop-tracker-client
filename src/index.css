@@ -36,3 +36,7 @@ table {
 .active {
   color: red;
 }
+
+img {
+  max-width: 23px;
+}
