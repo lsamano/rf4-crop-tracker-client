@@ -8,16 +8,18 @@ const CropRow = ({
   regrows,
   img_url
 }) => {
+  // fail-safe, loads a default image
   const loadDefaultImage = event => event.target.src='logo512.png'
+
   return (
     <tr>
       <td>
         <img alt={name} src={img_url} onError={loadDefaultImage} />
-        {name}
+        { name }
       </td>
-      <td>{grow_time}</td>
-      <td>{harvest_amount}</td>
-      { includeRegrow && <td>{regrows && "✅"}</td> }
+      <td>{ grow_time }</td>
+      <td>{ harvest_amount }</td>
+      { includeRegrow && <td>{ regrows && "✅" }</td> }
     </tr>
   );
 }
