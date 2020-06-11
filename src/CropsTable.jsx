@@ -23,7 +23,7 @@ const CropsTable = ({ crops, regrow, title }) => {
   }
 
   const makeHeaderRows = () => {
-    const headers = ["Name", "Grow Time", "Harvest Amount"]
+    const headers = ["", "Name", "Grow Time", "Harvest Amount"]
     if (regrow) {
       headers.push("Regrows")
     }

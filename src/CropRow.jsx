@@ -15,8 +15,8 @@ const CropRow = ({
     <tr>
       <td>
         <img alt={name} src={img_url} onError={loadDefaultImage} />
-        { name }
       </td>
+      <td>{ name }</td>
       <td>{ grow_time }</td>
       <td>{ harvest_amount }</td>
       { includeRegrow && <td>{ regrows && "✅" }</td> }
