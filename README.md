@@ -1,6 +1,8 @@
 ![example image](images/example.png)
 # Rune Factory 4 Crop Tracker - Client (Frontend)
-This app is for viewing in-season crops and flowers in the game Rune Factory 4 Special.
+This app is for viewing in-season crops and flowers in the game Rune Factory 4 Special. 
+
+Link to the Backend Repository [here](https://github.com/lsamano/rf4-crop-tracker-api).
 
 # Setup
 Run `npm install` to install dependencies and `npm start` to start the server. Server will run on Port 3001.
