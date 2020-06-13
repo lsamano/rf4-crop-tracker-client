@@ -1,6 +1,6 @@
 ![example image](images/example.png)
 # Rune Factory 4 Crop Tracker - Client (Frontend)
-This app is for viewing in-season crops and flowers in the game Rune Factory 4 Special. 
+This app is for viewing in-season crops and flowers in the game Rune Factory 4 Special.
 
 Link to the Backend Repository [here](https://github.com/lsamano/rf4-crop-tracker-api).
 
@@ -11,4 +11,4 @@ Run `npm install` to install dependencies and `npm start` to start the server. S
 - Choose a season in the dropdown menu to view its in-season crops and flowers.
   - Neutral crops included if applicable.
 - Clicking the headers of each table sorts them.
-  - It will highlight red to let you know what you are sorting by.
+  - It will highlight light green to let you know what you are sorting by.
