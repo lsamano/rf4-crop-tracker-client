@@ -52,7 +52,7 @@ const CropsTable = ({ crops, regrow, title }) => {
   }
 
   return (
-    <div>
+    <div className="title-with-table">
     <h4>{ title }</h4>
     <table>
       <thead>
