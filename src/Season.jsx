@@ -4,11 +4,11 @@ import CropsTable from './CropsTable';
 
 const Season = ({
   name,
+  likeToggle,
   liked_crops, liked_flowers,
   neutral_crops,
   hated_crops, hated_flowers
 }) => {
-  const [ likeToggle, setLikeToggle ] = useState(true)
 
   const showSeason = () => {
     if (likeToggle) {
@@ -34,9 +34,6 @@ const Season = ({
 
   return (
     <div>
-      <button onClick={() => setLikeToggle(!likeToggle)}>
-        {likeToggle ? "Click to Show Out-of-Season" : "Click to Show In-Season and Neutrals"}
-      </button>
       { showSeason() }
     </div>
   )
@@ -44,6 +41,7 @@ const Season = ({
 
 Season.propTypes = {
   name: PropTypes.string,
+  // likeToggle: PropTypes.boolean,
   liked_crops: PropTypes.array,
   liked_flowers: PropTypes.array,
   neutral_crops: PropTypes.array,

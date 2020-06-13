@@ -3,6 +3,7 @@ import Season from './Season';
 
 const DropdownWithSeason = ({ seasons }) => {
     const [ seasonIndex, setSeasonIndex ] = useState(0)
+    const [ likeToggle, setLikeToggle ] = useState(true)
 
   const formOptions = seasons.map(
     season => <option value={season.id - 1} key={season.id}>{season.name}</option>
@@ -14,7 +15,7 @@ const DropdownWithSeason = ({ seasons }) => {
   const chosenSeason = () => {
     const theSeason = seasons[seasonIndex]
     if (!!theSeason) {
-      return <Season key={theSeason.id} { ...theSeason } />
+      return <Season key={theSeason.id} likeToggle={likeToggle} { ...theSeason } />
     } else {
       return "Loading..."
     }
@@ -29,6 +30,9 @@ const DropdownWithSeason = ({ seasons }) => {
         </select>
       </form>
       <h2>{seasons[seasonIndex] && seasons[seasonIndex].name.toUpperCase()}</h2>
+        <button onClick={() => setLikeToggle(!likeToggle)}>
+          {likeToggle ? "Click to Show Out-of-Season" : "Click to Show In-Season and Neutrals"}
+        </button>
       { chosenSeason() }
     </div>
   );
