@@ -8,15 +8,15 @@ const Season = ({
   neutral_crops,
   hated_crops, hated_flowers
 }) => {
-  const [ likeToggle, setLikeToggle ] = useState(false)
+  const [ likeToggle, setLikeToggle ] = useState(true)
 
   const showSeason = () => {
     if (likeToggle) {
       return (
         <div className="seasons">
-          <CropsTable crops={liked_crops} regrow={true} title={"Crops"} />
+          <CropsTable crops={liked_crops} regrow={true} title={"In-Season Crops"} />
           {liked_flowers.length > 0
-            && <CropsTable crops={liked_flowers} regrow={false} title={"Flowers"} />}
+            && <CropsTable crops={liked_flowers} regrow={false} title={"In-Season Flowers"} />}
             {neutral_crops.length > 0
               && <CropsTable crops={neutral_crops} regrow={true} title={"Neutrals"} />}
             </div>
@@ -24,9 +24,9 @@ const Season = ({
         } else {
           return (
             <div className="seasons">
-              <CropsTable crops={hated_crops} regrow={true} title={"Hated Crops"} />
+              { hated_crops.length > 0 ? <CropsTable crops={hated_crops} regrow={true} title={"Out-of-Season Crops"} /> : "None" }
               { hated_flowers.length > 0
-                && <CropsTable crops={hated_flowers} regrow={false} title={"Hated Flowers"} />}
+                && <CropsTable crops={hated_flowers} regrow={false} title={"Out-of-Season Flowers"} />}
               </div>
             )
           }
