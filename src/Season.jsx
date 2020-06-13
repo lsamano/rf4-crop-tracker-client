@@ -45,7 +45,10 @@ const Season = ({
 Season.propTypes = {
   name: PropTypes.string,
   liked_crops: PropTypes.array,
-  liked_flowers: PropTypes.array
+  liked_flowers: PropTypes.array,
+  neutral_crops: PropTypes.array,
+  hated_crops: PropTypes.array,
+  hated_flowers: PropTypes.array
 };
 
 export default Season;
