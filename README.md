@@ -10,5 +10,7 @@ Run `npm install` to install dependencies and `npm start` to start the server. S
 # Current Features
 - Choose a season in the dropdown menu to view its in-season crops and flowers.
   - Neutral crops included if applicable.
+  - Note: For the four seasons, neutral crops excludes trees and year-round crops, which have their own season category each.
 - Clicking the headers of each table sorts them.
+  - Will sort either alphabetically, from highest to lowest, or true to false.
   - It will highlight light green to let you know what you are sorting by.
