@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import DropdownWithSeason from './DropdownWithSeason';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
+ const DropdownWithSeason = lazy(() => import('./DropdownWithSeason'));
 
 function App() {
   const [ seasons, setSeasons ] = useState([])
@@ -12,7 +12,9 @@ function App() {
 
   return (
     <div className="seasons">
-      <DropdownWithSeason seasons={seasons} />
+      <Suspense fallback={<div>NOW LOADING...</div>}>
+        <DropdownWithSeason seasons={seasons} />
+      </Suspense>
     </div>
   );
 }
