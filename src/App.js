@@ -10,10 +10,18 @@ function App() {
     .then(seasons => setSeasons(seasons))
   }, [])
 
+   const loadDropdownWithSeason = () => {
+     if (seasons.length > 0) {
+       return <DropdownWithSeason seasons={seasons} />
+     } else {
+       return null
+     }
+   }
+
   return (
     <div className="seasons">
       <Suspense fallback={<div>NOW LOADING...</div>}>
-        <DropdownWithSeason seasons={seasons} />
+        { loadDropdownWithSeason() }
       </Suspense>
     </div>
   );
