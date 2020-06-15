@@ -17,7 +17,7 @@ const DropdownWithSeason = ({ seasons }) => {
     if (!!theSeason) {
       return <Season key={theSeason.id} likeToggle={likeToggle} { ...theSeason } />
     } else {
-      return "Loading..."
+      return <div>"Now Loading Season..."</div>
     }
   }
 
