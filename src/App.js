@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
- const DropdownWithSeason = lazy(() => import('./DropdownWithSeason'));
+const DropdownWithSeason = lazy(() => import('./DropdownWithSeason'));
 
 function App() {
   const [ seasons, setSeasons ] = useState([])
