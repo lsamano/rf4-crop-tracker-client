@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from 'react';
+import { Switch, Route } from 'react-router-dom';
 const DropdownWithSeason = lazy(() => import('./DropdownWithSeason'));
 
 function App() {
@@ -14,16 +15,21 @@ function App() {
     })
   }, [])
 
-   const loadDropdownWithSeason = () => {
-     return loading ? null : <DropdownWithSeason seasons={seasons} />
+   const loadDropdownWithSeason = routerProps => {
+     return (
+       <div className="seasons">
+         <Suspense fallback={<div>NOW LOADING...</div>}>
+           { loading ? null : <DropdownWithSeason seasons={seasons} {...routerProps} /> }
+         </Suspense>
+       </div>
+     )
    }
 
   return (
-    <div className="seasons">
-      <Suspense fallback={<div>NOW LOADING...</div>}>
-        { loadDropdownWithSeason() }
-      </Suspense>
-    </div>
+    <Switch>
+      <Route path="/view-one-season" render={loadDropdownWithSeason} />
+    </Switch>
+
   );
 }
 
