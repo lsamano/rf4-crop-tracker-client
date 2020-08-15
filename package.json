@@ -7,11 +7,11 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "elliptic": ">=6.5.3",
-    "lodash": ">=4.17.19",
+    "lodash": "^4.17.20",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start",
@@ -20,7 +20,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "serialize-javascript": ">=3.1.0"
+    "serialize-javascript": ">=3.1.0",
+    "typescript": "^3.9.7"
   },
   "eslintConfig": {
     "extends": "react-app"
